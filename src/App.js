@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ResumeFormComponent from "./ResumeFormComponent";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="main_title">Quick Resume</h1>
+      <h3 className="main_title_description">
+        Build your own resume by filling the details and download it!!!No
+        regsitration needed!!Cheers🥳!!
+      </h3>
+      <ResumeFormComponent />
     </div>
   );
 }

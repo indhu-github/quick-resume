@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 
 function Experience({ id, WorkExperience, setWorkExperience }) {
   //component state
-  const [experience, setExperience] = useState({
-    JobTitle: "",
-    Employer: "",
-    StartDate: "",
-    EndDate: "",
-  });
+  const [experience, setExperience] = useState([
+    {
+      JobTitle: "",
+      Employer: "",
+      StartDate: "",
+      EndDate: "",
+    },
+  ]);
+  //   const [clicked, setClicked] = useState(false);
 
   //handle onChange
   const handleExperience = (e) => {
@@ -16,12 +19,26 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
     setExperience({ ...experience, [name]: value });
   };
 
+  const handleClick = () => {
+    let lastExperience = experience;
+    var newExperience = {
+      JobTitle: "",
+      Employer: "",
+      StartDate: "",
+      EndDate: "",
+    };
+
+    lastExperience.push(newExperience);
+    setExperience([...lastExperience]);
+  };
+
+  //It will render when the Experience state gets updated
   useEffect(() => {
     setWorkExperience({ ...WorkExperience, [id]: experience });
   }, [experience]);
 
   //It will render the experience component
-  return (
+  return experience.map((experience) => (
     <div>
       <input
         name="JobTitle"
@@ -51,8 +68,11 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
         required
         onChange={handleExperience}
       />
+      <button type="button" onClick={handleClick}>
+        +
+      </button>
     </div>
-  );
+  ));
 }
 
 export default Experience;

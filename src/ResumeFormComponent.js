@@ -73,7 +73,7 @@ function ResumeFormComponent() {
     setLanguages({ ...languages, [name]: value });
   };
 
-  console.log(educations);
+  //console.log(educations);
   return (
     <>
       {!formSubmitted ? (
@@ -91,7 +91,7 @@ function ResumeFormComponent() {
               <div className="experience">
                 <h2>Experience</h2>
                 <Experience
-                  id={1}
+                  id={Math.random()}
                   workExperience={workExperience}
                   setWorkExperience={setWorkExperience}
                 />

@@ -1,11 +1,9 @@
-.App {
-  text-align: center;
+
+
+.app {
+ height: 100vh;
+ overflow-y: scroll;
 }
 
-.main_title {
-  color: blue;
-}
-.main_title_description {
-  font-style: italic;
-  color: peru;
-}
+
+

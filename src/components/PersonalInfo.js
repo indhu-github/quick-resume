@@ -9,29 +9,32 @@ function PersonalInfo({ personalDetails, setPersonalDetails }) {
 
   //Renders personalInfo Component
   return (
-    <div>
+    <div className="personal_info">
       <input
+        className="form-control mb-3"
         name="firstName"
         value={personalDetails.firstName}
-        placeholder="First name"
+        placeholder="Full Name"
         required
         onChange={handlePersonalInfo}
       />
-      <input
+      {/* <input
+        className="form-control mb-3"
         name="middleName"
         value={personalDetails.middleName}
         placeholder="Middle name"
         onChange={handlePersonalInfo}
       />
       <input
+        className="form-control mb-3"
         name="lastName"
         value={personalDetails.lastName}
         placeholder="Last name"
         required
         onChange={handlePersonalInfo}
-      />
-      <br />
+      /> */}
       <input
+        className="form-control mb-3"
         name="PhoneNo"
         value={personalDetails.PhoneNo}
         placeholder="Phone number"
@@ -39,6 +42,7 @@ function PersonalInfo({ personalDetails, setPersonalDetails }) {
         onChange={handlePersonalInfo}
       />
       <input
+        className="form-control mb-3"
         name="EmailId"
         value={personalDetails.EmailId}
         placeholder="Email id"
@@ -46,14 +50,15 @@ function PersonalInfo({ personalDetails, setPersonalDetails }) {
         onChange={handlePersonalInfo}
       />
       <input
+        className="form-control mb-3"
         name="LinkedIn"
         value={personalDetails.LinkedIn}
         placeholder="LinkedIn Id"
         required
         onChange={handlePersonalInfo}
       />
-      <br />
       <input
+        className="form-control mb-3"
         name="Github"
         value={personalDetails.Github}
         placeholder="Github URL"

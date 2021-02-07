@@ -1,23 +1,54 @@
-input {
+/* input {
   border: 1px solid black;
   padding: 5px;
   border-radius: 8px;
   margin: 5px;
-}
+} */
+
 .MainForm {
-  margin: 20px 50px 20px 50px;
-  padding: 5px 80px;
-  border: 1px solid black;
-  position: relative;
-  background-color: darkcyan;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-around; */
+    margin-top: 30px;
+    /* position: relative; */
 }
-.FormComponent {
-  display: flex;
-  flex-direction: row;
+
+
+.MainForm .MuiButtonBase-root{
+  position: fixed;
 }
+
+
+.form{
+   overflow-y: scroll;
+}
+
+.backArrow{
+  left: 150px;
+  top: 220px;
+}
+
+.nextArrow{
+  right: 150px;
+  top: 220px;
+   
+}
+
+
+.form .hide{
+  display: none;
+}
+
+.form .show{
+  position: absolute;
+  top: 200px;
+  left: 370px;
+}
+
 .DownloadButton {
   margin: 400px 20px 50px 20px;
 }
+
 .download {
   height: 10%;
   width: 100%;
@@ -32,3 +63,49 @@ input {
   border-radius: 15px;
   color: white;
 }
+
+
+.name_info{
+    padding:20px  50px;
+    height: auto;
+    width: 600px;
+    background-color: rgb(72, 72, 179);
+}
+.experience{
+    padding:20px  50px;
+    height: auto;
+    width: 600px;
+    background-color: rgb(72, 72, 179);
+}
+.projects{
+    padding:20px  50px;
+    height: auto;
+    width: 600px;
+    background-color: rgb(72, 72, 179);
+
+}
+.skills{
+    padding:20px  50px;
+    height: auto;
+    width: 600px;
+    background-color: rgb(72, 72, 179);
+}
+.educations{
+    padding:20px  50px;
+    height: auto;
+    width: 600px;
+    background-color: rgb(72, 72, 179);
+}
+.certifications{
+    padding:20px  50px;
+    height: auto;
+    width: 600px;
+    background-color: rgb(72, 72, 179);
+}
+.languages{
+    padding:20px  50px;
+    height: auto;
+    width: 600px;
+    background-color: rgb(72, 72, 179);
+}
+

@@ -27,6 +27,8 @@ function Project({ projects, setProjects, id }) {
     <div>
       <form>
         <input
+        className="form-control mb-3"
+
           name="title"
           value={project.title}
           placeholder="Project Title"
@@ -34,6 +36,8 @@ function Project({ projects, setProjects, id }) {
           onChange={handleProject}
         />
         <input
+        className="form-control mb-3"
+
           name="description"
           value={project.description}
           placeholder="Description"
@@ -41,6 +45,8 @@ function Project({ projects, setProjects, id }) {
           onChange={handleProject}
         />
         <input
+        className="form-control mb-3"
+
           name="startDate"
           value={project.startDate}
           placeholder="Start Date"
@@ -48,6 +54,8 @@ function Project({ projects, setProjects, id }) {
           onChange={handleProject}
         />
         <input
+        className="form-control mb-3"
+
           name="endDate"
           value={project.endDate}
           placeholder="End Date"

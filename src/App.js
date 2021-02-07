@@ -1,15 +1,17 @@
 import "./App.css";
 import ResumeFormComponent from "./ResumeFormComponent";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="main_title">Quick Resume</h1>
-      <h3 className="main_title_description">
-        Build your own resume by filling the details and download it!!!No
-        regsitration needed!!Cheers🥳!!
+    <div className="container-fluid bg-secondary">
+      <h1 className="text-center  p-3">Quick Resume</h1>
+      <h3 className="text-center text-warning p-3">
+        Build your own resume by filling the details and download it!!!
       </h3>
-      <ResumeFormComponent />
+      <div className="body">
+        <ResumeFormComponent />
+      </div>
     </div>
   );
 }

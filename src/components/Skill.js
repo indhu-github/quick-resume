@@ -18,6 +18,8 @@ function Skill({ skills, setSkills, id }) {
   return (
     <div>
       <input
+        className="form-control mb-3"
+        
         name="skill1"
         value={Skill.skill1}
         placeholder="1st Skill"

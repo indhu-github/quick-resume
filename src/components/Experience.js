@@ -1,15 +1,15 @@
+
+
 import React, { useState, useEffect } from "react";
 
-function Experience({ id, WorkExperience, setWorkExperience }) {
+function Experience({ id,  WorkExperience, setWorkExperience }) {
   //component state
-  const [experience, setExperience] = useState([
-    {
+  const [experience, setExperience] = useState([{
       JobTitle: "",
       Employer: "",
       StartDate: "",
       EndDate: "",
-    },
-  ]);
+    },]);
   //   const [clicked, setClicked] = useState(false);
 
   //handle onChange
@@ -41,6 +41,8 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
   return experience.map((experience) => (
     <div>
       <input
+        className="form-control mb-3"
+        
         name="JobTitle"
         value={experience.JobTitle}
         placeholder="Job Title"
@@ -48,6 +50,8 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
         onChange={handleExperience}
       />
       <input
+        className="form-control mb-3"
+        
         name="Employer"
         value={experience.Employer}
         placeholder="Employer"
@@ -55,6 +59,8 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
         onChange={handleExperience}
       />
       <input
+        className="form-control mb-3"
+        
         name="StartDate"
         value={experience.StartDate}
         placeholder="Start Date"
@@ -62,17 +68,19 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
         onChange={handleExperience}
       />
       <input
+        className="form-control mb-3"
+        
         name="EndDate"
         value={experience.EndDate}
         placeholder="End Date"
         required
         onChange={handleExperience}
       />
-      <button type="button" onClick={handleClick}>
-        +
+      <button className="btn btn-info w-100" onClick={handleClick}>
+        Add
       </button>
     </div>
-  ));
+  ))
 }
 
 export default Experience;

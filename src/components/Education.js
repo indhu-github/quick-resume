@@ -26,6 +26,8 @@ function Education({ educations, setEducations, id }) {
     <div>
       <form>
         <input
+        className="form-control mb-3"
+
           name="qualification"
           value={education.qualification}
           placeholder="Qualification"
@@ -33,6 +35,8 @@ function Education({ educations, setEducations, id }) {
           onChange={handleEducation}
         />
         <input
+        className="form-control mb-3"
+
           name="institute"
           value={education.institute}
           placeholder="College name"
@@ -40,6 +44,8 @@ function Education({ educations, setEducations, id }) {
           onChange={handleEducation}
         />
         <input
+        className="form-control mb-3"
+
           name="year"
           value={education.year}
           placeholder="Year of passing out"

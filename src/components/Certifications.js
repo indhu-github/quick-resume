@@ -22,6 +22,8 @@ function Certifications({ id, certifications, setCertifications }) {
   return (
     <div>
       <input
+        className="form-control mb-3"
+        
         name="certificate"
         value={certification.certificate}
         placeholder="Certification"
@@ -29,6 +31,8 @@ function Certifications({ id, certifications, setCertifications }) {
         onChange={handleCertfication}
       />
       <input
+        className="form-control mb-3"
+
         name="issuedBy"
         value={certification.issuedBy}
         placeholder="Issued by"

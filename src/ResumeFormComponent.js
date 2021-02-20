@@ -12,17 +12,17 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import { IconButton } from "@material-ui/core";
 
 function ResumeFormComponent() {
-  const [personalDetails, setPersonalDetails] = useState({
-    firstName: "",
-    middleName: "",
-    lastName: "",
-    PhoneNo: "",
-    EmailId: "",
-    LinkedIn: "",
-    Github: "",
-  });
+  const [personalDetails, setPersonalDetails] = useState([
+    {
+      firstName: "",
+      PhoneNo: "",
+      EmailId: "",
+      LinkedIn: "",
+      Github: "",
+    },
+  ]);
 
-  const  [ currentPage, setCurrentPage   ] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1);
 
   const [workExperience, setWorkExperience] = useState([]);
   const [skills, setSkills] = useState([]);
@@ -33,7 +33,24 @@ function ResumeFormComponent() {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmit = () => {
-    setFormSubmitted({ formSubmitted: true });
+    if (
+      personalDetails.firstName &&
+      personalDetails.PhoneNo &&
+      personalDetails.EmailId &&
+      personalDetails.LinkedIn &&
+      personalDetails.Github &&
+      workExperience.length &&
+      skills.length &&
+      projects.length &&
+      educations.length &&
+      certifications.length &&
+      languages.first &&
+      languages.second
+    ) {
+      setFormSubmitted({ formSubmitted: true });
+    } else {
+      alert("Please fill all the fields");
+    }
   };
 
   const handleLanguages = (e) => {
@@ -41,60 +58,75 @@ function ResumeFormComponent() {
     setLanguages({ ...languages, [name]: value });
   };
 
-
-
-
-
-
   const handleDecrement = () => {
-    console.log('clicked')
+    console.log("clicked");
 
-    document.getElementById(String(currentPage -1)).classList.add('show')
-    document.getElementById(String(currentPage -1)).classList.remove('hide')
+    document.getElementById(String(currentPage - 1)).classList.add("show");
+    document.getElementById(String(currentPage - 1)).classList.remove("hide");
 
-        document.getElementById(String(currentPage)).classList.add('hide')
-        document.getElementById(String(currentPage)).classList.remove('show')
+    document.getElementById(String(currentPage)).classList.add("hide");
+    document.getElementById(String(currentPage)).classList.remove("show");
 
-    setCurrentPage(currentPage - 1)
-   
-
-  }
+    setCurrentPage(currentPage - 1);
+  };
 
   const handleIncrement = () => {
-    console.log('clicked')
-    document.getElementById(String(currentPage +1)).classList.add('show')
-    document.getElementById(String(currentPage+1)).classList.remove('hide')
+    console.log("clicked");
+    console.log(personalDetails);
+    //console.log(currentPage === 1 && personalDetails.length > 0);
 
-    document.getElementById(String(currentPage)).classList.add('hide')
-    document.getElementById(String(currentPage)).classList.remove('show')
+    if (
+      (currentPage === 1 &&
+        personalDetails.firstName &&
+        personalDetails.PhoneNo &&
+        personalDetails.EmailId &&
+        personalDetails.LinkedIn &&
+        personalDetails.Github) ||
+      (currentPage === 2 && workExperience.length) ||
+      (currentPage === 3 && projects.length) ||
+      (currentPage === 4 && skills.length) ||
+      (currentPage === 5 && educations.length) ||
+      (currentPage === 6 && certifications.length)
+    ) {
+      document.getElementById(String(currentPage + 1)).classList.add("show");
+      document.getElementById(String(currentPage + 1)).classList.remove("hide");
 
+      document.getElementById(String(currentPage)).classList.add("hide");
+      document.getElementById(String(currentPage)).classList.remove("show");
 
-    setCurrentPage(currentPage + 1)
+      setCurrentPage(currentPage + 1);
+    } else {
+      alert("Please fill all the fields");
+    }
 
-    console.log( currentPage)
-   }
+    //console.log(currentPage);
+  };
 
-
-  //console.log(educations);
   return (
     <>
       {!formSubmitted ? (
         <>
           <div className="MainForm">
-            {(currentPage > 1) ? (<IconButton onClick={handleDecrement} className="pl-3 pr-2 backArrow">
-              <ArrowBackIosIcon />
-            </IconButton>) : ''}
-            
+            {currentPage > 1 ? (
+              <IconButton
+                onClick={handleDecrement}
+                className="pl-3 pr-2 backArrow"
+              >
+                <ArrowBackIosIcon />
+              </IconButton>
+            ) : (
+              ""
+            )}
 
-            <form className='form'>              
-            <div className="name_info show" id='1'  >
-            <h2 className="text-center pb-4">Personal Info</h2>
-            <PersonalInfo
-              personalDetails={personalDetails}
-              setPersonalDetails={setPersonalDetails}
-            />
-          </div>
-              <div className="experience hide" id='2'>
+            <form className="form">
+              <div className="name_info show" id="1">
+                <h2 className="text-center pb-4">Personal Info</h2>
+                <PersonalInfo
+                  personalDetails={personalDetails}
+                  setPersonalDetails={setPersonalDetails}
+                />
+              </div>
+              <div className="experience hide" id="2">
                 <h2 className="text-center pb-4">Experience</h2>
                 <Experience
                   id={Math.random()}
@@ -103,20 +135,19 @@ function ResumeFormComponent() {
                 />
               </div>
 
-              <div className="projects hide" id='3'>
+              <div className="projects hide" id="3">
                 <h2 className="text-center pb-4">Projects</h2>
                 <Project id={1} projects={projects} setProjects={setProjects} />
-                <Project id={2} projects={projects} setProjects={setProjects} />
               </div>
 
-              <div className="skills hide" id='4'>
+              <div className="skills hide" id="4">
                 <h2 className="text-center pb-4">Skills:Mention top 3</h2>
                 <Skill id={1} skills={skills} setSkills={setSkills} />
                 <Skill id={2} skills={skills} setSkills={setSkills} />
                 <Skill id={3} skills={skills} setSkills={setSkills} />
               </div>
 
-              <div className="educations hide" id='5'>
+              <div className="educations hide" id="5">
                 <h2 className="text-center pb-4">Education</h2>
                 <Education
                   id={1}
@@ -134,7 +165,7 @@ function ResumeFormComponent() {
                   setEducations={setEducations}
                 />
               </div>
-              <div className="certifications hide" id='6'>
+              <div className="certifications hide" id="6">
                 <h2 className="text-center pb-4">Certifications</h2>
                 <Certifications
                   id={1}
@@ -152,11 +183,10 @@ function ResumeFormComponent() {
                   setCertifications={setCertifications}
                 />
               </div>
-              <div className='languages hide' id='7'>
+              <div className="languages hide" id="7">
                 <h2 className="text-center pb-4">Languages</h2>
                 <input
-        className="form-control mb-3"
-                  
+                  className="form-control mb-3"
                   name="first"
                   value={languages.first}
                   placeholder="Your primary language"
@@ -164,30 +194,32 @@ function ResumeFormComponent() {
                   onChange={handleLanguages}
                 />
                 <input
-        className="form-control mb-3"
-                  
+                  className="form-control mb-3"
                   name="second"
                   value={languages.second}
                   placeholder="Another language"
                   required
                   onChange={handleLanguages}
                 />
-                <button className='btn btn-success w-100' >
+                <button
+                  className="btn btn-success w-100"
+                  onClick={handleSubmit}
+                >
                   Submit
                 </button>
               </div>
-              
             </form>
-            { ( currentPage < 7)?(<IconButton  onClick={ handleIncrement } className="pl-3 pr-3 nextArrow">
-              <ArrowForwardIosIcon  />
-            </IconButton>):''  }
-            
+            {currentPage < 7 ? (
+              <IconButton
+                onClick={handleIncrement}
+                className="pl-3 pr-3 nextArrow"
+              >
+                <ArrowForwardIosIcon />
+              </IconButton>
+            ) : (
+              ""
+            )}
           </div>
-            {/* <div> */}
-            {/* <button className="download" onClick="">
-              Download as PDF
-            </button> */}
-          {/* </div> */}
         </>
       ) : (
         <Pdf />
@@ -195,4 +227,5 @@ function ResumeFormComponent() {
     </>
   );
 }
+
 export default ResumeFormComponent;

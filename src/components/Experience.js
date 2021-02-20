@@ -1,86 +1,70 @@
-
-
 import React, { useState, useEffect } from "react";
 
-function Experience({ id,  WorkExperience, setWorkExperience }) {
+function Experience({ id, WorkExperience, setWorkExperience }) {
   //component state
-  const [experience, setExperience] = useState([{
-      JobTitle: "",
-      Employer: "",
-      StartDate: "",
-      EndDate: "",
-    },]);
-  //   const [clicked, setClicked] = useState(false);
-
-  //handle onChange
-  const handleExperience = (e) => {
-    console.log(e.target);
-    const { name, value } = e.target;
-    setExperience({ ...experience, [name]: value });
-  };
+  const [JobTitle, setJobTitle] = useState("");
+  const [Employer, setEmployer] = useState("");
+  const [StartDate, setStartDate] = useState("");
+  const [EndDate, setEndDate] = useState("");
+  const [totalData, setTotalData] = useState([]);
 
   const handleClick = () => {
-    let lastExperience = experience;
-    var newExperience = {
-      JobTitle: "",
-      Employer: "",
-      StartDate: "",
-      EndDate: "",
-    };
-
-    lastExperience.push(newExperience);
-    setExperience([...lastExperience]);
+    //console.log(JobTitle, Employer, StartDate, EndDate);
+    setTotalData([
+      ...(JobTitle + JobTitle),
+      ...(Employer + Employer),
+      ...(StartDate + StartDate),
+      ...(EndDate + EndDate),
+    ]);
+    setJobTitle("");
+    setEmployer("");
+    setStartDate("");
+    setEndDate("");
   };
-
-  //It will render when the Experience state gets updated
-  useEffect(() => {
-    setWorkExperience({ ...WorkExperience, [id]: experience });
-  }, [experience]);
-
+  console.log(totalData);
   //It will render the experience component
-  return experience.map((experience) => (
+  return (
     <div>
       <input
         className="form-control mb-3"
-        
         name="JobTitle"
-        value={experience.JobTitle}
+        value={JobTitle}
         placeholder="Job Title"
         required
-        onChange={handleExperience}
+        onChange={(e) => setJobTitle(e.target.value)}
       />
       <input
         className="form-control mb-3"
-        
         name="Employer"
-        value={experience.Employer}
+        value={Employer}
         placeholder="Employer"
         required
-        onChange={handleExperience}
+        onChange={(e) => setEmployer(e.target.value)}
       />
       <input
         className="form-control mb-3"
-        
         name="StartDate"
-        value={experience.StartDate}
+        value={StartDate}
         placeholder="Start Date"
         required
-        onChange={handleExperience}
+        onChange={(e) => setStartDate(e.target.value)}
       />
       <input
         className="form-control mb-3"
-        
         name="EndDate"
-        value={experience.EndDate}
+        value={EndDate}
         placeholder="End Date"
         required
-        onChange={handleExperience}
+        onChange={(e) => setEndDate(e.target.value)}
       />
       <button className="btn btn-info w-100" onClick={handleClick}>
         Add
       </button>
+      {totalData.map((data) => (
+        <p>{data}</p>
+      ))}
     </div>
-  ))
+  );
 }
 
 export default Experience;

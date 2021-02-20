@@ -1,6 +1,8 @@
 import React from "react";
+import ResumeFormComponent from "../ResumeFormComponent";
 
 function Pdf() {
+  console.log(ResumeFormComponent.workExperience.experience);
   return (
     <div>
       <h2>

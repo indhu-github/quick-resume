@@ -12,15 +12,13 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import { IconButton } from "@material-ui/core";
 
 function ResumeFormComponent() {
-  const [personalDetails, setPersonalDetails] = useState([
-    {
-      firstName: "",
-      PhoneNo: "",
-      EmailId: "",
-      LinkedIn: "",
-      Github: "",
-    },
-  ]);
+  const [personalDetails, setPersonalDetails] = useState({
+    firstName: "",
+    PhoneNo: "",
+    EmailId: "",
+    LinkedIn: "",
+    Github: "",
+  });
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -31,7 +29,7 @@ function ResumeFormComponent() {
   const [certifications, setCertifications] = useState([]);
   const [languages, setLanguages] = useState({ first: "", second: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
-
+  console.log(workExperience);
   const handleSubmit = () => {
     if (
       personalDetails.firstName &&
@@ -73,7 +71,6 @@ function ResumeFormComponent() {
   const handleIncrement = () => {
     console.log("clicked");
     console.log(personalDetails);
-    //console.log(currentPage === 1 && personalDetails.length > 0);
 
     if (
       (currentPage === 1 &&
@@ -129,8 +126,8 @@ function ResumeFormComponent() {
               <div className="experience hide" id="2">
                 <h2 className="text-center pb-4">Experience</h2>
                 <Experience
-                  id={Math.random()}
-                  workExperience={workExperience}
+                  id
+                  WorkExperience={workExperience}
                   setWorkExperience={setWorkExperience}
                 />
               </div>

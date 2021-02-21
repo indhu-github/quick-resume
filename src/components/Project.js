@@ -12,11 +12,11 @@ function Project({ projects, setProjects, id }) {
       endDate: "",
     },
   ]);
-  console.log("Start date", project.startDate);
-  console.log(projects);
+  //console.log("Start date", project.startDate);
+  //console.log(projects);
   //handle onChange
   const handleProject = (e) => {
-    console.log(e.target);
+    //console.log(e.target);
     const { name, value } = e.target;
     setProject({ ...project, [name]: value });
   };

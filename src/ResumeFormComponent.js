@@ -29,7 +29,7 @@ function ResumeFormComponent() {
   const [certifications, setCertifications] = useState([]);
   const [languages, setLanguages] = useState({ first: "", second: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
-  console.log(workExperience);
+
   const handleSubmit = () => {
     if (
       personalDetails.firstName &&
@@ -50,6 +50,8 @@ function ResumeFormComponent() {
       alert("Please fill all the fields");
     }
   };
+
+  console.log(workExperience);
 
   const handleLanguages = (e) => {
     const { name, value } = e.target;
@@ -95,8 +97,6 @@ function ResumeFormComponent() {
     } else {
       alert("Please fill all the fields");
     }
-
-    //console.log(currentPage);
   };
 
   return (

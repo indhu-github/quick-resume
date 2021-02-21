@@ -10,7 +10,7 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
   });
 
   //const [expCount, setExpCount] = useState(0);
-  console.log(experience);
+  //console.log(experience);
 
   //handle onChange
   const handleExperience = (e) => {
@@ -20,7 +20,7 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
   };
 
   const handleClick = () => {
-    setWorkExperience({ ...WorkExperience, experience });
+    setWorkExperience([...WorkExperience, experience]);
     setExperience({
       JobTitle: "",
       Employer: "",
@@ -28,11 +28,6 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
       EndDate: "",
     });
   };
-
-  //It will render when the Experience state gets updated
-  // useEffect(() => {
-  //   setWorkExperience({ ...WorkExperience, [id]: experience });
-  // }, [experience]);
 
   //It will render the experience component
   return (

@@ -9,23 +9,29 @@ function Skill({ skills, setSkills, id }) {
     setSkill(e.target.value);
   };
 
-  //It will run when the skill state gets updated
-  useEffect(() => {
-    setSkills({ ...skills, [id]: skill });
-  }, [skill]);
+  const handleSave = () => {
+    if (skill !== "") {
+      setSkills([...skills, skill]);
+    } else {
+      alert("Please enter the data");
+    }
+    setSkill("");
+  };
 
   //It will render the component
   return (
     <div>
       <input
         className="form-control mb-3"
-        
         name="skill1"
         value={Skill.skill1}
         placeholder="1st Skill"
         required
         onChange={handleSkill}
       />
+      <button className="btn btn-success w-100" onClick={handleSave}>
+        Save and add another
+      </button>
     </div>
   );
 }

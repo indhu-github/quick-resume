@@ -51,8 +51,8 @@ function ResumeFormComponent() {
     }
   };
 
-  console.log(workExperience);
-  console.log(projects);
+  //console.log(workExperience);
+  // console.log(projects);
   console.log(skills);
 
   const handleLanguages = (e) => {

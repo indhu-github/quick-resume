@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function Skill({ skills, setSkills, id }) {
   //component state
@@ -12,10 +12,11 @@ function Skill({ skills, setSkills, id }) {
   const handleSave = () => {
     if (skill !== "") {
       setSkills([...skills, skill]);
+      setSkill("");
+      // console.log("skill:", skill);
     } else {
       alert("Please enter the data");
     }
-    setSkill("");
   };
 
   //It will render the component

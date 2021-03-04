@@ -51,9 +51,11 @@ function ResumeFormComponent() {
     }
   };
 
-  //console.log(workExperience);
-  // console.log(projects);
-  console.log(skills);
+  console.log("Experience", workExperience);
+  console.log("projects", projects);
+  console.log("Skills", skills);
+  console.log("Education", educations);
+  console.log("certifications", certifications);
 
   const handleLanguages = (e) => {
     const { name, value } = e.target;
@@ -146,25 +148,16 @@ function ResumeFormComponent() {
               <div className="educations hide" id="5">
                 <h2 className="text-center pb-4">Education</h2>
                 <Education
-                  id
+                  id={1}
                   educations={educations}
                   setEducations={setEducations}
                 />
               </div>
+
               <div className="certifications hide" id="6">
                 <h2 className="text-center pb-4">Certifications</h2>
                 <Certifications
-                  id={1}
-                  certifications={certifications}
-                  setCertifications={setCertifications}
-                />
-                <Certifications
-                  id={1}
-                  certifications={certifications}
-                  setCertifications={setCertifications}
-                />
-                <Certifications
-                  id={1}
+                  id
                   certifications={certifications}
                   setCertifications={setCertifications}
                 />

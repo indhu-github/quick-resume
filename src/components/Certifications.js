@@ -13,17 +13,16 @@ function Certifications({ id, certifications, setCertifications }) {
     setCertification({ ...certification, [name]: value });
   };
 
-  //
-  useEffect(() => {
-    setCertifications({ ...certifications, [id]: certification });
-  }, [certification]);
+  const handleSave = () => {
+    setCertifications([...certifications, certification]);
+    setCertification({ certificate: "", issuedBy: "" });
+  };
 
   //It will render the component
   return (
     <div>
       <input
         className="form-control mb-3"
-        
         name="certificate"
         value={certification.certificate}
         placeholder="Certification"
@@ -32,13 +31,15 @@ function Certifications({ id, certifications, setCertifications }) {
       />
       <input
         className="form-control mb-3"
-
         name="issuedBy"
         value={certification.issuedBy}
         placeholder="Issued by"
         required
         onChange={handleCertfication}
       />
+      <button className="btn btn-success w-100" onClick={handleSave}>
+        Save and add another
+      </button>
     </div>
   );
 }

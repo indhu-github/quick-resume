@@ -146,17 +146,7 @@ function ResumeFormComponent() {
               <div className="educations hide" id="5">
                 <h2 className="text-center pb-4">Education</h2>
                 <Education
-                  id={1}
-                  educations={educations}
-                  setEducations={setEducations}
-                />
-                <Education
-                  id={2}
-                  educations={educations}
-                  setEducations={setEducations}
-                />
-                <Education
-                  id={3}
+                  id
                   educations={educations}
                   setEducations={setEducations}
                 />

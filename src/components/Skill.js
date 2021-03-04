@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function Skill({ skills, setSkills, id }) {
   //component state
   const [skill, setSkill] = useState("");
+  console.log("skills", skill);
 
   //handle change
   const handleSkill = (e) => {
@@ -10,25 +11,21 @@ function Skill({ skills, setSkills, id }) {
   };
 
   const handleSave = () => {
-    if (skill !== "") {
+    if (skill) {
       setSkills([...skills, skill]);
-      setSkill("");
-      // console.log("skill:", skill);
-    } else {
-      alert("Please enter the data");
     }
+    setSkill("");
   };
-
-  //It will render the component
+  //It will render the ..
   return (
     <div>
       <input
         className="form-control mb-3"
         name="skill1"
-        value={Skill.skill1}
+        value={skill}
         placeholder="1st Skill"
         required
-        onChange={handleSkill}
+        onChange={(e) => setSkill(e.target.value)}
       />
       <button className="btn btn-success w-100" onClick={handleSave}>
         Save and add another

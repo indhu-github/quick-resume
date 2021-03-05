@@ -16,13 +16,15 @@ const PDF = ({
   //console.log(ResumeFormComponent.workExperience.experience);
   return (
     <div className="main_div">
-      <div className="header" ref={ref}>
-        <h1>{personalDetails.firstName}</h1>
-        <div className="details_bar">
-          <p>{personalDetails.EmailId}</p>
-          <p>{personalDetails.LinkedIn}</p>
-          <p>{personalDetails.Github}</p>
-          <p>{personalDetails.PhoneNo}</p>
+      <div className="pdf_page">
+        <div className="header" ref={ref}>
+          <h1>{personalDetails.fullName}</h1>
+          <div className="details_bar">
+            <p>{personalDetails.EmailId}</p>
+            <p>{personalDetails.LinkedIn}</p>
+            <p>{personalDetails.Github}</p>
+            <p>{personalDetails.PhoneNo}</p>
+          </div>
         </div>
       </div>
 

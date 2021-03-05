@@ -1,5 +1,15 @@
 .details_bar {
   display: flex;
   justify-content: space-around;
+  background-color: lightcoral;
+  padding: 10px;
   align-items: center;
+}
+
+.header > h1 {
+  padding: 20px;
+}
+
+.main_div {
+  width: 100%;
 }

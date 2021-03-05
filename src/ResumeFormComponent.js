@@ -30,8 +30,6 @@ function ResumeFormComponent() {
   const [languages, setLanguages] = useState({ first: "", second: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  //console.log(totalData);
-
   const handleSubmit = () => {
     if (
       personalDetails.fullName &&

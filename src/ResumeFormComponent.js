@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ResumeFormComponent.css";
-import Pdf from "./components/Pdf.js";
+import PDF from "./components/PDF.js";
 import Project from "./components/Project";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
@@ -34,7 +34,7 @@ function ResumeFormComponent() {
 
   const handleSubmit = () => {
     if (
-      personalDetails.firstName &&
+      personalDetails.fullName &&
       personalDetails.PhoneNo &&
       personalDetails.EmailId &&
       personalDetails.LinkedIn &&
@@ -82,7 +82,7 @@ function ResumeFormComponent() {
 
     if (
       (currentPage === 1 &&
-        personalDetails.firstName &&
+        personalDetails.fullName &&
         personalDetails.PhoneNo &&
         personalDetails.EmailId &&
         personalDetails.LinkedIn &&
@@ -203,7 +203,7 @@ function ResumeFormComponent() {
           </div>
         </>
       ) : (
-        <Pdf
+        <PDF
           personalDetails={personalDetails}
           workExperience={workExperience}
           projects={projects}

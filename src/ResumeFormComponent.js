@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./ResumeFormComponent.css";
 import Pdf from "./components/Pdf.js";
 import Project from "./components/Project";
@@ -13,7 +13,7 @@ import { IconButton } from "@material-ui/core";
 
 function ResumeFormComponent() {
   const [personalDetails, setPersonalDetails] = useState({
-    firstName: "",
+    fullName: "",
     PhoneNo: "",
     EmailId: "",
     LinkedIn: "",
@@ -29,6 +29,8 @@ function ResumeFormComponent() {
   const [certifications, setCertifications] = useState([]);
   const [languages, setLanguages] = useState({ first: "", second: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  //console.log(totalData);
 
   const handleSubmit = () => {
     if (
@@ -201,7 +203,15 @@ function ResumeFormComponent() {
           </div>
         </>
       ) : (
-        <Pdf />
+        <Pdf
+          personalDetails={personalDetails}
+          workExperience={workExperience}
+          projects={projects}
+          skills={skills}
+          educations={educations}
+          certifications={certifications}
+          languages={languages}
+        />
       )}
     </>
   );

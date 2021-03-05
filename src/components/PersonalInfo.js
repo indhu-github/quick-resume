@@ -12,27 +12,12 @@ function PersonalInfo({ personalDetails, setPersonalDetails }) {
     <div className="personal_info">
       <input
         className="form-control mb-3"
-        name="firstName"
-        value={personalDetails.firstName}
+        name="fullName"
+        value={personalDetails.fullName}
         placeholder="Full Name"
         required
         onChange={handlePersonalInfo}
       />
-      {/* <input
-        className="form-control mb-3"
-        name="middleName"
-        value={personalDetails.middleName}
-        placeholder="Middle name"
-        onChange={handlePersonalInfo}
-      />
-      <input
-        className="form-control mb-3"
-        name="lastName"
-        value={personalDetails.lastName}
-        placeholder="Last name"
-        required
-        onChange={handlePersonalInfo}
-      /> */}
       <input
         className="form-control mb-3"
         name="PhoneNo"

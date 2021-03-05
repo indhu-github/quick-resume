@@ -1,13 +1,27 @@
 import React from "react";
-import ResumeFormComponent from "../ResumeFormComponent";
+import "./Pdf.css";
 
-function Pdf() {
-  console.log(ResumeFormComponent.workExperience.experience);
+function Pdf({
+  personalDetails,
+  workExperience,
+  projects,
+  skills,
+  educations,
+  certifications,
+  languages,
+}) {
+  //console.log(ResumeFormComponent.workExperience.experience);
   return (
-    <div>
-      <h2>
-        You have successfully submitted the form.You can download it as PDF
-      </h2>
+    <div className="main_div">
+      <div className="header">
+        <h1>{personalDetails.firstName}</h1>
+        <div className="details_bar">
+          <p>{personalDetails.EmailId}</p>
+          <p>{personalDetails.LinkedIn}</p>
+          <p>{personalDetails.Github}</p>
+          <p>{personalDetails.PhoneNo}</p>
+        </div>
+      </div>
     </div>
   );
 }

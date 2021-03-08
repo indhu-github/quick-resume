@@ -135,31 +135,20 @@ const Pdf = ({
           <div class="group-2">
             <div class="title">
               <div class="box">
-                <h2>Education</h2>
+                <h2>Experience</h2>
               </div>
             </div>
             <div class="desc">
-              <ul>
-                <li>
-                  <div class="msg-1">
-                    {workExperience.StartDate}-{workExperience.EndDate}| Lorem,
-                    ipsum
-                  </div>
-                  <div class="msg-2">Masterall School of Texas</div>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <div class="msg-1">2014-2017 | Lorem, ipsum</div>
-                  <div class="msg-2">Lorem, ipsum dolor.</div>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <div class="msg-1">2012-2014 | Lorem ipsum dolor sit</div>
-                  <div class="msg-2">Lorem ipsum dolor sit amet.</div>
-                </li>
-              </ul>
+              {workExperience.map((work) => (
+                <ul>
+                  <li>
+                    <div class="msg-1">
+                      {work.StartDate} -{work.EndDate} {work.JobTitle}
+                      <div class="msg-2">{work.Employer}</div>
+                    </div>
+                  </li>
+                </ul>
+              ))}
             </div>
           </div>
           <div class="group-3">

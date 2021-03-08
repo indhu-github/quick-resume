@@ -52,7 +52,7 @@ function ResumeFormComponent() {
   };
 
   console.log("Experience", workExperience);
-  console.log("start date:", workExperience.StartDate);
+  //console.log("start date:", workExperience[0].StartDate);
   console.log("projects", projects);
   console.log("Skills", skills);
   console.log("Education", educations);

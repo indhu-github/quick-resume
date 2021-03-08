@@ -1,18 +1,249 @@
-.details_bar {
-  display: flex;
-  justify-content: center;
-  background-color: lightcoral;
-  padding: 10px;
-  align-items: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+  }
 }
 
-.header > h1 {
-  padding: 10px;
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.main_div {
+body {
+  background: #5f6368;
+}
+
+.toCenter {
   width: 100%;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
+.grid-container {
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.33fr 1fr;
+      grid-template-columns: 0.33fr 1fr;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.grid-container .zone-1 {
+  padding: 40px 20px;
+  padding-left: 35px;
+  background: #d1d1d1;
+  width: 100%;
+  color: #313131;
+}
+
+.grid-container .zone-1 .contact-box {
+  margin-top: 10px;
+}
+
+.grid-container .zone-1 .contact-box > * {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.3fr 1fr;
+      grid-template-columns: 0.3fr 1fr;
+  margin-top: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid-container .zone-1 .contact-box > * i {
+  font-size: 1.3em;
+}
+
+.grid-container .zone-1 .contact-box > * .text {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  word-break: break-all;
+}
+
+.grid-container .zone-1 .personal-box {
+  margin-top: 35px;
+}
+
+.grid-container .zone-1 .personal-box > *:not(.title) {
+  margin: 25px 0px;
+  -ms-grid-columns: 0.55fr 1fr;
+      grid-template-columns: 0.55fr 1fr;
+  display: -ms-grid;
+  display: grid;
+}
+
+.grid-container .zone-1 .personal-box .progress .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #313131;
+  border-radius: 50%;
+  margin-left: 4px;
+}
+
+.grid-container .zone-1 .personal-box .progress .dot.active {
+  background-color: #9db858;
+}
+
+.grid-container .zone-1 .hobbies-box {
+  margin-top: 35px;
+}
+
+.grid-container .zone-1 .hobbies-box .logo {
+  margin: 10px 0px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template: 1fr 1fr / 1fr 1fr;
+  font-size: 2.8em;
+  grid-row-gap: 15px;
+}
+
+.grid-container .zone-2 {
+  background: #2c2b29;
+  padding: 40px 20px;
+  padding-right: 75px;
+  color: #b5b5b4;
+}
+
+.grid-container .zone-2 .headTitle {
+  font-size: 2.1em;
+  color: #9db858;
+}
+
+.grid-container .zone-2 .headTitle h1 {
+  font-weight: 400 !important;
+}
+
+.grid-container .zone-2 .subTitle h1 {
+  font-weight: 400 !important;
+}
+
+.grid-container .zone-2 .box {
+  display: inline-block;
+  padding: 2px 70px 2px 20px;
+  margin-left: -20px;
+  margin-top: 35px;
+  background: #9db858;
+  color: #2c2b29;
+}
+
+.grid-container .zone-2 .group-1 .desc {
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+.grid-container .zone-2 .group-2 .desc {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.grid-container .zone-2 .group-2 .desc ul {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.grid-container .zone-2 .group-2 .desc ul:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: -22px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #9db858;
+}
+
+.grid-container .zone-2 .group-2 .desc ul li {
+  list-style-type: none;
+  position: relative;
+}
+
+.grid-container .zone-2 .group-2 .desc ul li:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: -18px;
+  height: 60px;
+  border-left: 2px solid #9db858;
+}
+
+.grid-container .zone-2 .group-2 .desc ul:last-of-type li:before {
+  content: none;
+}
+
+.grid-container .zone-2 .group-2 .desc ul li div:last-of-type {
+  color: #9db858;
+  font-weight: bold;
+}
+
+.grid-container .zone-2 .group-3 .desc {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.grid-container .zone-2 .group-3 .desc ul {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.grid-container .zone-2 .group-3 .desc ul:before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: -22px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #9db858;
+}
+
+.grid-container .zone-2 .group-3 .desc ul li {
+  list-style-type: none;
+  position: relative;
+}
+
+.grid-container .zone-2 .group-3 .desc ul li:before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: -18px;
+  height: 100px;
+  border-left: 2px solid #9db858;
+}
+
+.grid-container .zone-2 .group-3 .desc ul:last-of-type li:before {
+  content: none;
+}
+
+.grid-container .zone-2 .group-3 .desc ul li div:nth-child(2) {
+  color: #9db858;
+  font-weight: bold;
+}
+/*# sourceMappingURL=Pdf.css.map */

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ResumeFormComponent.css";
-import PDF from "./components/PDF.js";
+import PDF from "./components/Pdf.js";
 import Project from "./components/Project";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
@@ -52,6 +52,7 @@ function ResumeFormComponent() {
   };
 
   console.log("Experience", workExperience);
+  console.log("start date:", workExperience.StartDate);
   console.log("projects", projects);
   console.log("Skills", skills);
   console.log("Education", educations);

@@ -6,24 +6,25 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
   const [experience, setExperience] = useState({
     JobTitle: "",
     Employer: "",
-    StartDate: "",
-    EndDate: "",
+    StartDate: new Date(),
+    EndDate: new Date(),
   });
 
-  //handle onChange
+  // //handle onChange
   const handleExperience = (e) => {
-    //console.log(e.target);
+    console.log(e.target);
     const { name, value } = e.target;
     setExperience({ ...experience, [name]: value });
   };
 
   const handleSave = () => {
+    // console.log(experience);
     setWorkExperience([...WorkExperience, experience]);
     setExperience({
       JobTitle: "",
       Employer: "",
-      StartDate: "",
-      EndDate: "",
+      StartDate: new Date(),
+      EndDate: new Date(),
     });
   };
 
@@ -46,7 +47,7 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
         required
         onChange={handleExperience}
       />
-      <DatePicker
+      {/* <DatePicker
         required
         name="StartDate"
         value={experience.StartDate}
@@ -67,6 +68,20 @@ function Experience({ id, WorkExperience, setWorkExperience }) {
           setExperience((prevState) => ({ ...prevState, EndDate: date }))
         }
         placeholderText="start date"
+      /> */}
+      <input
+        type="date"
+        name="StartDate"
+        className="form-control mb-3"
+        value={experience.StartDate}
+        onChange={handleExperience}
+      />
+      <input
+        type="date"
+        name="EndDate"
+        className="form-control mb-3"
+        value={experience.EndDate}
+        onChange={handleExperience}
       />
       <button className="btn btn-success w-100" onClick={handleSave}>
         Save and add another

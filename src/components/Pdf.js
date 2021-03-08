@@ -144,8 +144,8 @@ const Pdf = ({
                   <li>
                     <div class="msg-1">
                       {work.StartDate} -{work.EndDate} {work.JobTitle}
-                      <div class="msg-2">{work.Employer}</div>
                     </div>
+                    <div class="msg-2">{work.Employer}</div>
                   </li>
                 </ul>
               ))}
@@ -158,33 +158,16 @@ const Pdf = ({
               </div>
             </div>
             <div class="desc">
-              <ul>
-                <li>
-                  <div class="msg-1">Present | Achitect</div>
-                  <div class="msg-2">Lorem, ipsum dolor</div>
-                  <div class="msg-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing.
-                  </div>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <div class="msg-1">2019-2020 | Draftsman</div>
-                  <div class="msg-2">Lorem ipsum dolor sit</div>
-                  <div class="msg-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </div>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <div class="msg-1">2018-2019 | Junior Draftman</div>
-                  <div class="msg-2">Lorem, ipsum</div>
-                  <div class="msg-3">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing.
-                  </div>
-                </li>
-              </ul>
+              {educations.map((edu) => (
+                <ul>
+                  <li>
+                    <div class="msg-1">
+                      {edu.year} | {edu.qualification}
+                    </div>
+                    <div class="msg-2">{edu.institute}</div>
+                  </li>
+                </ul>
+              ))}
             </div>
           </div>
         </div>

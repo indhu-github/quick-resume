@@ -40,55 +40,12 @@ const Pdf = ({
           </div>
           <div class="personal-box">
             <div class="title">
-              <h2>Personal Skills</h2>
+              <h2>Skills</h2>
             </div>
             <div class="skill-1">
-              <p>English</p>
-              <div class="progress">
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-              </div>
-            </div>
-            <div class="skill-2">
-              Spanish
-              <div class="progress">
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-              </div>
-            </div>
-            <div class="skill-3">
-              German
-              <div class="progress">
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-              </div>
-            </div>
-            <div class="skill-4">
-              British
-              <div class="progress">
-                <div class="dot active"></div>
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-              </div>
+              {skills.map((skill) => (
+                <p>{skill}</p>
+              ))}
             </div>
           </div>
           <div class="hobbies-box">

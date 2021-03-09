@@ -14,28 +14,25 @@ const Pdf = ({
     <div>
       <div class="grid-container">
         <div class="zone-1">
-          <div class="toCenter">
-            <div class="profile"></div>
-          </div>
           <div class="contact-box">
             <div class="title">
               <h2>Contact</h2>
             </div>
             <div class="call">
               <i class="fas fa-phone-alt"></i>
-              <div class="text">(+66) 987654321</div>
+              <div class="text">Phone:{personalDetails.PhoneNo}</div>
             </div>
             <div class="home">
               <i class="fas fa-home"></i>
-              <div class="text">Thailand</div>
+              <div class="text">Github:{personalDetails.Github}</div>
             </div>
             <div class="website">
               <i class="fas fa-globe"></i>
-              <div class="text">https://codepen.io/MiniMark</div>
+              <div class="text">LinkedIn:{personalDetails.LinkedIn}</div>
             </div>
             <div class="email">
               <i class="fas fa-envelope"></i>
-              <div class="text">info@gmail.com</div>
+              <div class="text">Email:{personalDetails.EmailId}</div>
             </div>
           </div>
           <div class="personal-box">
@@ -48,23 +45,29 @@ const Pdf = ({
               ))}
             </div>
           </div>
+          <div class="certifications-box">
+            <div class="title">
+              <h2>Certifications</h2>
+            </div>
+            <div class="desc">
+              {certifications.map((certf) => (
+                <ul>
+                  <li>
+                    <p>
+                      {certf.certificate} - {certf.issuedBy}
+                    </p>
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div>
           <div class="hobbies-box">
             <div class="title">
-              <h2>Hobbies</h2>
+              <h2>Languages</h2>
             </div>
             <div class="logo">
-              <div class="logo-1">
-                <i class="fas fa-gamepad"></i>
-              </div>
-              <div class="logo-2">
-                <i class="fas fa-tv"></i>
-              </div>
-              <div class="logo-3">
-                <i class="fas fa-camera"></i>
-              </div>
-              <div class="logo-4">
-                <i class="fas fa-lightbulb"></i>
-              </div>
+              <p>{languages.first} </p>
+              <p>{languages.second}</p>
             </div>
           </div>
         </div>
@@ -108,6 +111,25 @@ const Pdf = ({
               ))}
             </div>
           </div>
+          {/* <div class="group-2">
+            <div class="title">
+              <div class="box">
+                <h2>Projects</h2>
+              </div>
+            </div>
+            <div class="desc">
+              {projects.map((proj) => (
+                <ul>
+                  <li>
+                    <div class="msg-1">
+                      {proj.startDate} - {proj.endDate} {proj.title}
+                    </div>
+                    <div class="msg-2">{proj.description}</div>
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div> */}
           <div class="group-3">
             <div class="title">
               <div class="box">

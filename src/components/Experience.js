@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import DatePicker from "react-datepicker";
+import React, { useState } from "react";
 
 function Experience({ id, WorkExperience, setWorkExperience }) {
   //component state

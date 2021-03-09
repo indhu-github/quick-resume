@@ -7,8 +7,8 @@ function Project({ projects, setProjects, id }) {
   const [project, setProject] = useState({
     title: "",
     description: "",
-    startDate: "",
-    endDate: "",
+    startDate: new Date(),
+    endDate: new Date(),
   });
 
   //handle onChange
@@ -47,7 +47,21 @@ function Project({ projects, setProjects, id }) {
         required
         onChange={handleProject}
       />
-      <DatePicker
+      <input
+        type="date"
+        name="startDate"
+        className="form-control mb-3"
+        value={project.startDate}
+        onChange={handleProject}
+      />
+      <input
+        type="date"
+        name="endDate"
+        className="form-control mb-3"
+        value={project.endDate}
+        onChange={handleProject}
+      />
+      {/* <DatePicker
         required
         name="startDate"
         value={project.startDate}
@@ -68,7 +82,7 @@ function Project({ projects, setProjects, id }) {
           setProject((prevState) => ({ ...prevState, endDate: date }))
         }
         placeholderText="end date"
-      />
+      /> */}
       <button className="btn btn-success w-100" onClick={handleSave}>
         Save and add another
       </button>

@@ -111,7 +111,7 @@ const Pdf = ({
               ))}
             </div>
           </div>
-          {/* <div class="group-2">
+          <div class="group-2">
             <div class="title">
               <div class="box">
                 <h2>Projects</h2>
@@ -122,14 +122,14 @@ const Pdf = ({
                 <ul>
                   <li>
                     <div class="msg-1">
-                      {proj.startDate} - {proj.endDate} {proj.title}
+                      {proj.startDate} -{proj.endDate} {proj.title}
                     </div>
                     <div class="msg-2">{proj.description}</div>
                   </li>
                 </ul>
               ))}
             </div>
-          </div> */}
+          </div>
           <div class="group-3">
             <div class="title">
               <div class="box">

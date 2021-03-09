@@ -50,6 +50,23 @@ function PersonalInfo({ personalDetails, setPersonalDetails }) {
         required
         onChange={handlePersonalInfo}
       />
+      <input
+        className="form-control mb-3"
+        name="position"
+        value={personalDetails.position}
+        placeholder="Current Position"
+        required
+        onChange={handlePersonalInfo}
+      />
+      <textarea
+        className="form-control"
+        rows="3"
+        name="about"
+        value={personalDetails.about}
+        placeholder="About yourself"
+        required
+        onChange={handlePersonalInfo}
+      />
     </div>
   );
 }

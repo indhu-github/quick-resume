@@ -18,6 +18,8 @@ function ResumeFormComponent() {
     EmailId: "",
     LinkedIn: "",
     Github: "",
+    position: "",
+    about: "",
   });
 
   const [currentPage, setCurrentPage] = useState(1);

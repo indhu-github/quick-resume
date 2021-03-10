@@ -1,7 +1,9 @@
 import React from "react";
 import "./Pdf.css";
+import Pdf from "react-to-pdf";
 
-const Pdf = ({
+const ref = React.createRef();
+const PDF = ({
   personalDetails,
   workExperience,
   projects,
@@ -12,7 +14,7 @@ const Pdf = ({
 }) => {
   return (
     <div>
-      <div class="grid-container">
+      <div class="grid-container" ref={ref}>
         <div class="zone-1">
           <div class="contact-box">
             <div class="title">
@@ -76,7 +78,7 @@ const Pdf = ({
             <h1>{personalDetails.fullName}</h1>
           </div>
           <div class="subTitle">
-            <h1>Architect</h1>
+            <h1>{personalDetails.position}</h1>
           </div>
           <div class="group-1">
             <div class="title">
@@ -84,13 +86,7 @@ const Pdf = ({
                 <h2>About Me</h2>
               </div>
             </div>
-            <div class="desc">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure
-              deserunt excepturi numquam obcaecati doloribus ab quisquam
-              sapiente quidem officiis aspernatur. A quae totam provident
-              accusamus iure esse earum magnam adipisci, odit libero inventore
-              laborum, rerum laudantium maxime corporis consequatur repellendus.
-            </div>
+            <div class="desc">{personalDetails.about}</div>
           </div>
           <div class="group-2">
             <div class="title">
@@ -151,8 +147,11 @@ const Pdf = ({
           </div>
         </div>
       </div>
+      <Pdf targetRef={ref} filename="post.pdf">
+          {({ toPdf }) => <button onClick={toPdf}>Capture as PDF</button>}
+        </Pdf>
     </div>
   );
 };
 
-export default Pdf;
+export default PDF;

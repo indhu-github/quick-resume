@@ -148,8 +148,8 @@ const PDF = ({
         </div>
       </div>
       <Pdf targetRef={ref} filename="post.pdf">
-          {({ toPdf }) => <button onClick={toPdf}>Capture as PDF</button>}
-        </Pdf>
+        {({ toPdf }) => <button onClick={toPdf}>Capture as PDF</button>}
+      </Pdf>
     </div>
   );
 };

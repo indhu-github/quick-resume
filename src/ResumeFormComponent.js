@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ResumeFormComponent.css";
-import PDF from "./components/Pdf.js";
+import PDF from "./components/PDF.js";
 import Project from "./components/Project";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
@@ -106,6 +106,9 @@ function ResumeFormComponent() {
     }
   };
 
+  //this is the form we get first after submitting it , we will get the template which is pdf component\
+  //Is this the current form renydesering inbrowser?yes,then where your calling this component in PDF component
+  //first in app.js this componen twill be caled and when we submit it,pdf component will be displayed
   return (
     <>
       {!formSubmitted ? (
